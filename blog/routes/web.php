@@ -2,12 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/a', function () {
-    return  "Route A";
+Route::get('/articles', function () {
+    return  "Article Route";
 });
 
-Route::get('/b', function () {
-    return "Route B";
+Route::get('/articles/detail/{id}', function ($id) {
+    return "Article Detail - $id";
 });
 
 Route::get('/', function () {
