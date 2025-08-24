@@ -2,9 +2,8 @@
 
 @section('content')
     <div class="container" style="max-width: 800px">
-        @foreach ($articles as $article)
-            <div class="card mb-3"> 
-                <div class="card-body">
+            <div class="card mb-3 border-primary"> 
+                <div class="card-body ">
                     <h4 class="card-title">{{ $article->title }}</h4>
                     <div class="text-muted">
                         {{ $article->created_at}}
@@ -12,9 +11,10 @@
                     <p>
                         {{ $article->body }}
                     </p>
-                    <a href="{{ url("/articles/detail/$article->id")}}" class="card-link">View Detail</a>
+                    <a href="{{ url("/articles") }}" class=" btn btn-outline-primary ">Back</a>
+                    <a href="{{ url("/articles/delete/$article->id") }}" class="card-link btn btn-outline-danger ">Delete</a>
                 </div>
             </div>
-        @endforeach
+        
     </div>
 @endsection
